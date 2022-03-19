@@ -1,51 +1,73 @@
+::root {
+	/* Primary colors */
+	--softblue: ;
+	--cyan: hsl(178, 100%, 50%);
+
+	/* Neutral colors */
+	--lineColor: ;
+}
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: Outfit;
-	height: 100%;
-}
-
-/* Settings for small devices first */
-#container {
+	height: 100vh;
 	background-color: hsl(217, 54%, 11%);
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
+/* Settings for small devices first */
 .card {
+	background-color: hsl(216, 50%, 16%);	
+	color: hsl(215, 51%, 70%);
+	width: 90%;
+	height: 95%;
+	border-radius: 10px;
+	margin: 20vmin 7vmin;
+	padding: 3vmin;
 	display: flex;
 	flex-direction: column;
-	background-color: hsl(216, 50%, 16%);
-	border-radius: 10px;
-	padding: 7vmin;
-
-	/* These are changed for larger devices */
-	width: 80%;
-	margin: 10% 5%;
+	justify-content: stretch;
+	box-shadow: 2px 2px 20px hsl(217, 54%, 9%), -2px -2px 20px hsl(217, 54%, 9%);
+	transition: 0.3s;
 }
 
-.card div {
-	flex-shrink: 3;
+.card:hover {
+	color: hsl(178, 100%, 50%);
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
 .cardPreviewImage {
 	max-width: 100%;
-	height: auto;
 	border-radius: inherit;
 }
 
-/* Card values */
+.cardDescription h4 {
+	color: white; 
+}
+
 .cardValues {
-	display: flex;	
-	justify-content: space-between;
-}
-
-.cardValues div {
 	display: flex;
-	align-items: center;
+	justify-content: space-between;
+	height: 10px;
 }
 
-/* Author information */
+.ethereum {
+	color: hsl(178, 100%, 50%);
+	font-weight: 600;
+}
+
+.timeLeft {
+	font-weight: 400;
+}
+
+hr { color: hsl(215, 32%, 27%); 
+	width: 100%;
+}
+
 .cardAuthorInformation {
 	display: flex;
 	align-items: center;
@@ -53,9 +75,15 @@ body {
 
 .cardAuthorInformation img {
 	width: 10%;
-	margin-right: 3vmin;
 	border: 1px solid white;
 	border-radius: 50%;
+	margin-right: 3vmin;
 }
-
 /* Settings for larger devices */
+@media screen and (min-width: 600px) {
+	.card {
+		width: 20%;
+		height: 70%;
+	}
+	hr { margin: 3vmin 0; }
+}
