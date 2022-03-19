@@ -1,2 +1,2 @@
-## NFT Component Card
+## NFT Card Component
 [Preview] ('images/preview.png')
